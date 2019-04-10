@@ -1,7 +1,7 @@
 ---
 name: "\U0001F680 Feature request"
 about: Suggest an idea for this project. If this doesn’t look right, [choose a different
-  type](https://github.com/danner26/IAS-BBScripts/issues/new/choose).
+  type](https://github.com/danner26/BunnyScripts/issues/new/choose).
 title: "\U0001F680FR: "
 labels: new request
 assignees: ''

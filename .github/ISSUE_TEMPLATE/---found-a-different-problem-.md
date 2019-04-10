@@ -1,7 +1,7 @@
 ---
 name: "\U0001F310 Found a different problem?"
 about: Found a different problem not categorized as any other issue template? If this
-  doesn’t look right, [choose a different type](https://github.com/danner26/IAS-BBScripts/issues/new/choose).
+  doesn’t look right, [choose a different type](https://github.com/danner26/BunnyScripts/issues/new/choose).
 title: "\U0001F310?: "
 labels: new ?
 assignees: ''

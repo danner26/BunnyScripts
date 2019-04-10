@@ -1,7 +1,7 @@
 ---
 name: "⁉️ Need help with BunnyScripts?"
 about: Please file an issue in our help repo. If this doesn’t look right, [choose
-  a different type](https://github.com/danner26/IAS-BBScripts/issues/new/choose).
+  a different type](https://github.com/danner26/BunnyScripts/issues/new/choose).
 title: "⁉️HELP: "
 labels: new help
 assignees: ''
