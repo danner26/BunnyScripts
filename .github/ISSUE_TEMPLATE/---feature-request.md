@@ -1,15 +1,15 @@
 ---
 name: "\U0001F680 Feature request"
 about: Suggest an idea for this project. If this doesn’t look right, [choose a different
-  type](https://github.com/danner26/bunny-api/issues/new/choose).
+  type](https://github.com/danner26/IAS-BBScripts/issues/new/choose).
 title: "\U0001F680FR: "
-labels: new request
+labels: ''
 assignees: ''
 
 ---
 
 <!--
-Thank you for suggesting an idea to make BunnyAPI better.
+Thank you for suggesting an idea to make BunnyScripts better.
 
 Please fill in as much of the template below as you're able.
 -->
