@@ -41,7 +41,7 @@ Q ENTER
 Q DELAY 500
 Q STRING A
 Q ENTER
-Q DELAY 750
+Q DELAY 1000
 Q STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
 Q ENTER
 Q DELAY 1000

