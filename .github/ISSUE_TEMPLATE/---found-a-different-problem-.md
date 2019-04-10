@@ -3,7 +3,7 @@ name: "\U0001F310 Found a different problem?"
 about: Found a different problem not categorized as any other issue template? If this
   doesn’t look right, [choose a different type](https://github.com/danner26/IAS-BBScripts/issues/new/choose).
 title: "\U0001F310?: "
-labels: ''
+labels: new ?
 assignees: ''
 
 ---

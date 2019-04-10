@@ -3,7 +3,7 @@ name: "\U0001F41B Bug report"
 about: Create a report to help us improve. If this doesn’t look right, [choose a different
   type](https://github.com/danner26/IAS-BBScripts/issues/new/choose).
 title: "\U0001F41B BUG: "
-labels: ''
+labels: new issue
 assignees: ''
 
 ---
