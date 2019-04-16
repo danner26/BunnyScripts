@@ -18,3 +18,6 @@ This project and everyone participating in it is governed by the [Contributor Co
 
 ## Contributing
 Pull requests are the way to go here. We only have two rules for submitting a pull request: match the naming convention (camelCase) and any other styling set hereon. 
+
+## Disclaimer
+This repository is for education and research purposes only. Anything provided by this repo is to be used with your own responsibility, as we do not assume any responsibility for damages to any party. By cloning, copying, or using anything in this repository, you accept any and all responsability and liability. Please be careful and think.
