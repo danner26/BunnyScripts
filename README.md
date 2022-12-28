@@ -1,6 +1,6 @@
 # BunnyScripts
 
-`BunnyScripts` is a repo dedicated to Bash Bunny scripting that uses standalone payloads, and payloads that reply on the [BunnyAPI](https://github.com/danner26/BunnyAPI) repo by Daniel W. Anner and Gregory Walsh. This project is originally for our CSIS33-3381 with Dr. Aakash Taneja. In working on this project, we have found a new respect and passion for these Bash Bunny scripts. We plan to keep our research going, and continue to upkeep and integrate new features for this repo.
+`BunnyScripts` is a repo dedicated to Bash Bunny scripting that uses standalone payloads, and payloads that reply on the [BunnyAPI](https://github.com/danner26/BunnyAPI) repo by [Daniel W. Anner](https://github.com/danner26) and [Gregory Walsh](https://github.com/walshg3). This project is originally for our CSIS33-3381 with Dr. Aakash Taneja. In working on this project, we have found a new respect and passion for these Bash Bunny scripts. We plan to keep our research going, and continue to upkeep and integrate new features for this repo.
 
 ## Usage
 When using this repo's payloads, you are free to adapt it for your needs, but any scripts relying on the API will work best with the tested latest tested master version over at the [BunnyAPI](https://github.com/danner26/BunnyAPI) repo. After following the [wiki setup](https://github.com/danner26/BunnyScripts/wiki/Setup), you are set to use the payloads!
